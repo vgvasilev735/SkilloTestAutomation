@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Skillo Test Suite">
+    <test name="UI Tests">
+        <classes>
+            <class name="tests.LoginTests"/>
+            <class name="tests.PostTests"/>
+            <class name="tests.ProfileTests"/>
+            <class name="tests.HomePageTests"/>
+        </classes>
+    </test>
+</suite>

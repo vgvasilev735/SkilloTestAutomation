@@ -1,0 +1,11 @@
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/pages/HomePage.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/pages/LoginPage.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/pages/NewPostPage.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/pages/ProfilePage.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/tests/BaseTest.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/tests/HomePageTests.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/tests/LoginTests.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/tests/PostTests.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/tests/ProfileTests.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/utils/DriverManager.java
+/Users/vvasilev/Downloads/SkilloTestAutomation/src/test/java/utils/ScreenshotUtil.java
