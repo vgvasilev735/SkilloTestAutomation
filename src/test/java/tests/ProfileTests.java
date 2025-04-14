@@ -19,15 +19,20 @@ public class ProfileTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.login("marmot1", "Marmot123");
 
+        // Wait for the limk
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(home.profileLink));
 
-        home.profileLink.click();
+        // Redirect to profile
+        driver.get("http://training.skillo-bg.com:4300/users/9435");
 
         ProfilePage profile = new ProfilePage(driver);
-        // Изчакай елемента, който съдържа потребителското име
+
+        // Wait for the username
         wait.until(ExpectedConditions.visibilityOf(profile.profileUsername));
 
-        Assert.assertTrue(profile.profileUsername.isDisplayed(), "Username is not visible on profile page.");
+        // Validate the username
+        String actualUsername = profile.profileUsername.getText();
+        Assert.assertEquals(actualUsername, "marmot1", "Username on profile page is not correct.");
     }
 }

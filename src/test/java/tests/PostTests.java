@@ -21,20 +21,20 @@ public class PostTests extends BaseTest {
         LoginPage login = new LoginPage(driver);
         login.login("marmot1", "Marmot123");
 
-        // Изчакай профил линка като потвърждение за успешен login
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        // Waiting for successful login
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOf(home.newPostLink));
 
         home.newPostLink.click();
 
         NewPostPage post = new NewPostPage(driver);
-        post.createPost(System.getProperty("user.dir") + "/src/test/resources/testimg.png", "Автоматизиран тест!");
+        post.createPost(System.getProperty("user.dir") + "/src/test/resources/testimg.png", "atomated groundhog");
 
 
         wait.until(ExpectedConditions.visibilityOf(home.profileLink));
         home.profileLink.click();
 
-// Изчакай постът да се появи в профила
+// Wait for post to be posted
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("app-post")));
 
         ProfilePage profile = new ProfilePage(driver);

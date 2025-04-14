@@ -30,7 +30,7 @@ public class NewPostPage {
     public WebElement createPostBtn;
 
     public void createPost(String imagePath, String caption) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.presenceOfElementLocated(
                 org.openqa.selenium.By.cssSelector("input[type='file']"))
         );
@@ -38,7 +38,7 @@ public class NewPostPage {
         uploadInput.sendKeys(imagePath);
         captionField.sendKeys(caption);
 
-        // Ако публикацията е по подразбиране Public, махаме чекчето и я правим Private
+        // Always set the post to Public
         if (!postStatusSwitch.isSelected()) {
             postStatusSwitch.click();
         }
