@@ -16,19 +16,19 @@ public class LoginTests extends BaseTest {
         // open homepage
         driver.get("http://training.skillo-bg.com:4300/posts/all");
 
-        // create new objec
+        // Create a new object
         HomePage home = new HomePage(driver);
         home.clickLogin();
 
-        // login with user
+        // Login with user
         LoginPage login = new LoginPage(driver);
         login.login("marmot1", "Marmot123");
 
-        // wait to see the profile link
+        // Wait to see the profile link
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(home.profileLink));
 
-        // check if the profile link is visible
+        // Check if the profile link is visible
         Assert.assertTrue(home.profileLink.isDisplayed(), "Профил линкът не се вижда!");
     }
 }

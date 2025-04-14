@@ -26,27 +26,27 @@ public class EditProfileTests extends BaseTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOf(home.profileLink));
 
-        // go to profile page
+        // Go to the profile page
         driver.get("http://training.skillo-bg.com:4300/users/9435");
 
         EditProfilePage profile = new EditProfilePage(driver);
 
-        // wait to load the profile
+        // Wait to load the profile
         wait.until(ExpectedConditions.visibilityOf(profile.profileUsername));
 
         // Hover over the upload profile pic
         Actions actions = new Actions(driver);
         actions.moveToElement(profile.profileImage).perform();
 
-        // click when the camera is shown
+        // Click when the camera is shown
         wait.until(ExpectedConditions.visibilityOf(profile.editProfilePictureDiv));
         profile.editProfilePictureDiv.click();
 
-        // uploading the new picture
+        // Upload the new picture
         String imagePath = System.getProperty("user.dir") + "/src/test/resources/myProfilePic.png";
         profile.uploadInput.sendKeys(imagePath);
 
-        // wait to see the new pic
+        // Wait to see the new picture
         wait.until(ExpectedConditions.visibilityOf(profile.profileImage));
 
         Assert.assertTrue(profile.profileImage.isDisplayed(), "Profile image should be visible after upload.");
